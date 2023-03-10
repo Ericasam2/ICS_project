@@ -1,8 +1,4 @@
-<<<<<<< HEAD
-#!/bin/sh
-=======
 #!/bin/bash
->>>>>>> e68eacc8f44183ed47ca9cff1e07b73f8ff01762
 # Any subsequent(*) commands which fail will cause the shell script to exit immediately
 set -e
 
