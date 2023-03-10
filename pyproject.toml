@@ -76,7 +76,28 @@ dev = [
 ]
 
 [tool.setuptools.packages.find]
+<<<<<<< HEAD
 include = ["jax_double_pendulum"]
+=======
+exclude = [
+    "assignment",
+    "autograded",
+    "autograded.*",
+    "build",
+    "build.*",
+    "ci-setup",
+    "examples",
+    "examples.*",
+    "feedback",
+    "feedback.*",
+    "release",
+    "release.*",
+    "source",
+    "source.*",
+    "tests",
+    "tests.*",
+]
+>>>>>>> e68eacc8f44183ed47ca9cff1e07b73f8ff01762
 
 [tool.black]
 # https://github.com/psf/black

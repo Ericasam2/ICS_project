@@ -34,8 +34,13 @@ def animate_robot(
     :param filepath: path of the file where the animation is saved
     """
     sim_dt = jnp.round(jnp.mean(sim_ts["t_ts"][1:] - sim_ts["t_ts"][:-1]), 3)
+<<<<<<< HEAD
     assert type(step_skip) == int, "step_skip must be an integer bigger than 1"
     assert step_skip > 1, "step_skip must be an integer bigger than 1"
+=======
+    assert type(step_skip) == int, "step_skip must be an integer bigger or equal 1"
+    assert step_skip >= 1, "step_skip must be an integer bigger or equal 1"
+>>>>>>> e68eacc8f44183ed47ca9cff1e07b73f8ff01762
     num_frames = sim_ts["t_ts"].shape[0]
     interval = step_skip * sim_dt * 1000
 
