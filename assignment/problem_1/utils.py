@@ -65,11 +65,7 @@ def generate_snn_data(
         gray_img_ini = cv2.cvtColor(obs[e][0], cv2.COLOR_BGR2GRAY)
         snn_data_epoch = torch.tensor([])
         for t in range(1, int(time_window * num_data + 1)):
-<<<<<<< HEAD
-            gray_img = cv2.cvtColor(obs[e][int((t + 1) * 10 - 1)], cv2.COLOR_BGR2GRAY)
-=======
             gray_img = cv2.cvtColor(obs[e][int((t + 1) - 1)], cv2.COLOR_BGR2GRAY)
->>>>>>> e68eacc8f44183ed47ca9cff1e07b73f8ff01762
             img = torch.tensor(get_diff(gray_img, gray_img_ini)).unsqueeze(0)
             snn_data_epoch = torch.cat((snn_data_epoch, img))
             gray_img_ini = gray_img
@@ -89,15 +85,9 @@ def snn_animation(snn_data: torch.FloatTensor, path: str):
     ani.save(path, writer=pw_writer)
 
 
-<<<<<<< HEAD
-class datasetOffline(torch.utils.data.Dataset):
-    """
-    generate a torch dataset for saving event-based data
-=======
 class OfflineDataset(torch.utils.data.Dataset):
     """
     Generate a torch dataset for saving event-based data
->>>>>>> e68eacc8f44183ed47ca9cff1e07b73f8ff01762
     """
 
     def __init__(self, events, targets, num_iter, num_data, time_window):
@@ -113,11 +103,7 @@ class OfflineDataset(torch.utils.data.Dataset):
         events_output = torch.tensor([])
         for k in range(int(j * self.time_window), int((j + 1) * self.time_window)):
             events_output = torch.cat((events_output, self.events[i][k].unsqueeze(0)))
-<<<<<<< HEAD
-        target_output = self.targets[i][int((j + 1) * self.time_window * 10 - 1)]
-=======
         target_output = self.targets[i][int((j + 1) * self.time_window - 1)]
->>>>>>> e68eacc8f44183ed47ca9cff1e07b73f8ff01762
         return events_output, target_output
 
     def __len__(self):
@@ -145,11 +131,7 @@ def divide_and_save_data(
     Returns:
 
     """
-<<<<<<< HEAD
-    dataset = datasetOffline(snn_data, state, num_iter, num_data, time_window)
-=======
     dataset = OfflineDataset(snn_data, state, num_iter, num_data, time_window)
->>>>>>> e68eacc8f44183ed47ca9cff1e07b73f8ff01762
     for i, (event, target) in enumerate(dataset):
         spike_save_path = "spike" + str(i) + ".pt"
         target_save_path = "target" + str(i) + ".pt"
