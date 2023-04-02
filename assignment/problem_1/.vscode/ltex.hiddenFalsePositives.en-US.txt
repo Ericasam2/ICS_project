@@ -1,0 +1,3 @@
+{"rule":"THE_SENT_END","sentence":"^\\QFeedforward Spiking NN\na.\\E$"}
+{"rule":"THE_SENT_END","sentence":"^\\QTraining SNN\na.\\E$"}
+{"rule":"MORFOLOGIK_RULE_EN_US","sentence":"^\\QOutput decoding:\nRate decoding: take the neuron with the highest firing rate (or spike count) as the predicted class\nwe want the correct neuron class to emit the most spikes over the course of the simulation run\nThe practical effect is that the membrane potential of the correct class is encouraged to increase while those of incorrect classes are reduced\nCrossEntropy: \\E(?:Dummy|Ina|Jimmy-)[0-9]+\\Q\nLatency decoding: Take the neuron that fires first as the predicted class\\E$"}
